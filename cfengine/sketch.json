@@ -1,0 +1,25 @@
+{
+
+    "manifest":
+    {
+        "wordpress.cf": { "description": "main file" },
+        "README.md": { "documentation": true },
+
+        "params/wordpress-base.json": { "description": "Base configuration parameters for different platforms" },
+        "params/wordpress.json": { "description": "Example configuration parameters" }
+    },
+
+    "metadata":
+    {
+        "name": "WebApps::wordpress_install",
+	"description": "Install and configure Wordpress",
+        "version": 1.00,
+        "license": "MIT",
+        "tags": [ "cfdc" ],
+        "authors": [ "Aleksey Tsalolikhin <atsaloli.tech@gmail.com>", "Diego Zamboni <diego.zamboni@cfengine.com>" ],
+        "depends": { "cfengine": { "version": "3.3.0" }, "os": [ "linux" ] }
+    },
+
+    
+    "interface": [ "wordpress.cf" ]
+}

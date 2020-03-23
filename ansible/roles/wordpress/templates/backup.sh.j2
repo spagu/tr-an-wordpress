@@ -1,0 +1,8 @@
+#!/bin/bash
+
+date_time=`date +%m-%d-%y`
+/usr/local/bin/wp db export --allow-root --path=/srv/www/{{ server_hostname }}/ wp-latest.sql
+
+/usr/bin/gsutil cp wp-latest.sql gs://{{ gcloud_bucket_name }}/db/latest/
+
+/usr/bin/gsutil cp wp-latest.sql gs://{{ gcloud_bucket_name }}/db/wp-$date_time
